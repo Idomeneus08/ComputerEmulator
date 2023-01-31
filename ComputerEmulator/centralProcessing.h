@@ -50,7 +50,13 @@ class CPU
 
 					m_registers[destinationRegister] = m_registers[register2] + m_registers[register1];
 					
-				case 1:
+				case 1:		//add unsigned
+
+					int register1 = convertBinary(s, 6, 5);
+					int register2 = convertBinary(s, 11, 5);
+					int destinationRegister = convertBinary(s, 16, 5);
+
+					m_registers[destinationRegister] = (unsigned int)m_registers[register2] + (unsigned int)m_registers[register1];
 
 				case 2:
 
