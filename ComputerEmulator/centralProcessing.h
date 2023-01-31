@@ -49,6 +49,8 @@ class CPU
 					int destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = m_registers[register2] + m_registers[register1];
+
+					return m_programCounter + 1;
 					
 				case 1:		//add unsigned
 
@@ -58,6 +60,8 @@ class CPU
 
 					m_registers[destinationRegister] = (unsigned int)m_registers[register2] + (unsigned int)m_registers[register1];
 
+					return m_programCounter + 1;
+
 				case 2:		//subtract
 
 					int register1 = convertBinary(s, 6, 5);
@@ -66,6 +70,8 @@ class CPU
 
 					m_registers[destinationRegister] = m_registers[register2] - m_registers[register1];
 
+					return m_programCounter + 1;
+
 				case 3:		//subtract unsigned
 
 					int register1 = convertBinary(s, 6, 5);
@@ -73,6 +79,8 @@ class CPU
 					int destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = abs(m_registers[register2] - m_registers[register1]);
+
+					return m_programCounter + 1;
 
 			}
 			

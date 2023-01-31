@@ -21,7 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="RAM.txt" />
-    <Text Include="data.txt" />
     <Text Include="Registers.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +28,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="centralProcessing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="asmToBinary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

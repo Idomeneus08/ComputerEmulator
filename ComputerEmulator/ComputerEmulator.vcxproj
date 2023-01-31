@@ -130,11 +130,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="data.txt" />
     <Text Include="RAM.txt" />
     <Text Include="Registers.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="asmToBinary.h" />
     <ClInclude Include="centralProcessing.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
