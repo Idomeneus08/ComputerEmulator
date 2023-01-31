@@ -132,6 +132,7 @@
   <ItemGroup>
     <Text Include="data.txt" />
     <Text Include="RAM.txt" />
+    <Text Include="Registers.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="centralProcessing.h" />

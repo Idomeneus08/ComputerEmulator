@@ -6,6 +6,7 @@ class CPU
 {
 	private:
 		int m_programCounter;
+		int* m_registers;
 
 	public:
 
@@ -14,6 +15,7 @@ class CPU
 		CPU(int location)
 		{
 			m_programCounter = location;
+			m_registers = new int[32];
 		}
 
 		//runs the code at the pc
@@ -36,12 +38,18 @@ class CPU
 	private:
 		
 		//executes the line at the passed in pc, and returns the next pc
-		static int execute(char* s)
+		int execute(char* s)
 		{
 			switch (getOpCode(s))
 			{
-				case 0:
+				case 0:		//add
 
+					int register1 = convertBinary(s, 6, 5);
+					int register2 = convertBinary(s, 11, 5);
+					int destinationRegister = convertBinary(s, 16, 5);
+
+					m_registers[destinationRegister] = m_registers[register2] + m_registers[register1];
+					
 				case 1:
 
 				case 2:
@@ -67,7 +75,7 @@ class CPU
 
 		static int getOpCode(char* s)
 		{
-			return convertBinary(s, 0, 5);
+			return convertBinary(s, 0, 6);
 		}
 		
 };
