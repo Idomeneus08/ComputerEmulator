@@ -22,6 +22,7 @@
   <ItemGroup>
     <Text Include="RAM.txt" />
     <Text Include="Registers.txt" />
+    <Text Include="ASM.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

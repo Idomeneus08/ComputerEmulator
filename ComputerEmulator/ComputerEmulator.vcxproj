@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="ASM.txt" />
     <Text Include="RAM.txt" />
     <Text Include="Registers.txt" />
   </ItemGroup>

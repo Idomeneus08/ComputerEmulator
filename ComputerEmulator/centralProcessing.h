@@ -40,13 +40,14 @@ class CPU
 		//executes the line at the passed in pc, and returns the next pc
 		int execute(char* s)
 		{
+			int register1, register2, destinationRegister;
 			switch (getOpCode(s))
 			{
 				case 0:		//add
 
-					int register1 = convertBinary(s, 6, 5);
-					int register2 = convertBinary(s, 11, 5);
-					int destinationRegister = convertBinary(s, 16, 5);
+					register1 = convertBinary(s, 6, 5);
+					register2 = convertBinary(s, 11, 5);
+					destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = m_registers[register2] + m_registers[register1];
 
@@ -54,9 +55,9 @@ class CPU
 					
 				case 1:		//add unsigned
 
-					int register1 = convertBinary(s, 6, 5);
-					int register2 = convertBinary(s, 11, 5);
-					int destinationRegister = convertBinary(s, 16, 5);
+					register1 = convertBinary(s, 6, 5);
+					register2 = convertBinary(s, 11, 5);
+					destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = (unsigned int)m_registers[register2] + (unsigned int)m_registers[register1];
 
@@ -64,9 +65,9 @@ class CPU
 
 				case 2:		//subtract
 
-					int register1 = convertBinary(s, 6, 5);
-					int register2 = convertBinary(s, 11, 5);
-					int destinationRegister = convertBinary(s, 16, 5);
+					register1 = convertBinary(s, 6, 5);
+					register2 = convertBinary(s, 11, 5);
+					destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = m_registers[register2] - m_registers[register1];
 
@@ -74,9 +75,9 @@ class CPU
 
 				case 3:		//subtract unsigned
 
-					int register1 = convertBinary(s, 6, 5);
-					int register2 = convertBinary(s, 11, 5);
-					int destinationRegister = convertBinary(s, 16, 5);
+					register1 = convertBinary(s, 6, 5);
+					register2 = convertBinary(s, 11, 5);
+					destinationRegister = convertBinary(s, 16, 5);
 
 					m_registers[destinationRegister] = abs(m_registers[register2] - m_registers[register1]);
 
@@ -84,6 +85,7 @@ class CPU
 
 			}
 			
+			return -1;
 
 		}
 
